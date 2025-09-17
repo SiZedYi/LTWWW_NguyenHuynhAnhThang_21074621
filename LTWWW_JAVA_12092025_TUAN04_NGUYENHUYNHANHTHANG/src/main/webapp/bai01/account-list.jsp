@@ -43,7 +43,7 @@
         %>
     </table>
     <div style="margin-top:20px;text-align:center;">
-        <a href="${pageContext.request.contextPath}/bai02/user-registration.jsp">Register New User</a>
+        <a href="${pageContext.request.contextPath}/bai01/user-registration.jsp">Register New User</a>
     </div>
 </div>
 </body>

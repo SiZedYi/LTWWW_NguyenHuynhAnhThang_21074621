@@ -19,7 +19,7 @@ public class UserRegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Show registration form
-        request.getRequestDispatcher("/bai02/user-registration.jsp").forward(request, response);
+        request.getRequestDispatcher("/bai01/user-registration.jsp").forward(request, response);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class UserRegistrationServlet extends HttpServlet {
         // Simple validation
         if (firstName == null || lastName == null || email == null || password == null || gender == null || birthMonth == null || birthDay == null || birthYear == null || !email.equals(reEmail)) {
             request.setAttribute("error", "Please fill all fields correctly.");
-            request.getRequestDispatcher("/bai02/user-registration.jsp").forward(request, response);
+            request.getRequestDispatcher("/bai01/user-registration.jsp").forward(request, response);
             return;
         }
 
@@ -57,7 +57,8 @@ public class UserRegistrationServlet extends HttpServlet {
 
         // Forward to account list
         request.setAttribute("users", users);
-        request.getRequestDispatcher("/bai02/account-list.jsp").forward(request, response);
+        System.out.println(users);
+        request.getRequestDispatcher("/bai01/account-list.jsp").forward(request, response);
     }
 }
 
