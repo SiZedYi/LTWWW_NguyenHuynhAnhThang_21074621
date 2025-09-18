@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="fit.iuh.thang.bai01.User" %>
+<%@ page import="fit.iuh.thang.bai01.model.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +43,7 @@
         %>
     </table>
     <div style="margin-top:20px;text-align:center;">
-        <a href="${pageContext.request.contextPath}/bai01/user-registration.jsp">Register New User</a>
+        <a href="${pageContext.request.contextPath}/views/bai01/user-registration.jsp">Register New User</a>
     </div>
 </div>
 </body>

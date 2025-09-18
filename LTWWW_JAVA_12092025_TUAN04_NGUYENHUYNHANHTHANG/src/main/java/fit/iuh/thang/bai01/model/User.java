@@ -1,4 +1,4 @@
-package fit.iuh.thang.bai01;
+package fit.iuh.thang.bai01.model;
 
 import java.util.Date;
 

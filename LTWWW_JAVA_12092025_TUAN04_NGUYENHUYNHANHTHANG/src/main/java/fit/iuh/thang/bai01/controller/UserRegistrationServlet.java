@@ -1,15 +1,22 @@
-package fit.iuh.thang.bai01;
+package fit.iuh.thang.bai01.controller;
 
+import fit.iuh.thang.bai01.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet("/user-registration")
 public class UserRegistrationServlet extends HttpServlet {
@@ -19,11 +26,13 @@ public class UserRegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Show registration form
-        request.getRequestDispatcher("/bai01/user-registration.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/bai01/user-registration.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
         // Get form data
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -35,12 +44,6 @@ public class UserRegistrationServlet extends HttpServlet {
         String birthYear = request.getParameter("birthYear");
         String gender = request.getParameter("gender");
 
-        // Simple validation
-        if (firstName == null || lastName == null || email == null || password == null || gender == null || birthMonth == null || birthDay == null || birthYear == null || !email.equals(reEmail)) {
-            request.setAttribute("error", "Please fill all fields correctly.");
-            request.getRequestDispatcher("/bai01/user-registration.jsp").forward(request, response);
-            return;
-        }
 
         // Parse birthday
         Date birthday = null;
@@ -50,15 +53,22 @@ public class UserRegistrationServlet extends HttpServlet {
         } catch (Exception e) {
             birthday = null;
         }
-
         // Create user and add to list
         User user = new User(firstName, lastName, email, birthday, gender, password);
+        //  Validation
+        Set<ConstraintViolation<User>> violations = validator.validate(user);
+        if (!violations.isEmpty()) {
+            request.setAttribute("error", "Please fill all fields correctly.");
+            request.getRequestDispatcher("/views/bai01/user-registration.jsp").forward(request, response);
+            return;
+        }
+
         users.add(user);
 
         // Forward to account list
         request.setAttribute("users", users);
         System.out.println(users);
-        request.getRequestDispatcher("/bai01/account-list.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/bai01/account-list.jsp").forward(request, response);
     }
 }
 
