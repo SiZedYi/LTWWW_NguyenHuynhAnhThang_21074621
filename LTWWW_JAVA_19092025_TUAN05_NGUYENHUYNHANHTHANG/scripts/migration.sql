@@ -19,11 +19,11 @@ CREATE TABLE DIENTHOAI
 );
 
 INSERT INTO NHACUNGCAP (MANCC, TENNHACC, DIACHI, SODIENTHOAI)
-VALUES (1, 'Apple Việt Nam', 'Hà Nội', '0123456789'),
-       (2, 'Samsung Electronics', 'TP.HCM', '0987654321'),
-       (3, 'Xiaomi Việt Nam', 'Đà Nẵng', '0901234567');
+VALUES ('1', 'Apple Việt Nam', 'Hà Nội', '0123456789'),
+       ('2', 'Samsung Electronics', 'TP.HCM', '0987654321'),
+       ('3', 'Xiaomi Việt Nam', 'Đà Nẵng', '0901234567');
 
 INSERT INTO DIENTHOAI (MADT, TENDT, NAMSANXUAT, CAUHINH, MANCC, HINHANH)
-VALUES (1, 'iPhone 15 Pro', 2023, 'A17 Pro, 8GB RAM, 256GB', 1, 'iphone15pro.jpg'),
-       (2, 'Samsung Galaxy S24 Ultra', 2024, 'Snapdragon 8 Gen 3, 12GB RAM, 512GB', 2, 's24ultra.png'),
-       (3, 'Xiaomi 14 Pro', 2024, 'Snapdragon 8 Gen 3, 12GB RAM, 512GB', 3, 'xiaomi14pro.jpg');
+VALUES ('1', 'iPhone 15 Pro', 2023, 'A17 Pro, 8GB RAM, 256GB', '1', 'iphone15pro.jpg'),
+       ('2', 'Samsung Galaxy S24 Ultra', 2024, 'Snapdragon 8 Gen 3, 12GB RAM, 512GB', '2', 's24ultra.png'),
+       ('3', 'Xiaomi 14 Pro', 2024, 'Snapdragon 8 Gen 3, 12GB RAM, 512GB', '3', 'xiaomi14pro.jpg');
