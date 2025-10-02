@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import javax.sql.DataSource;
 import java.util.List;
 
-@WebServlet(name="DanhSachDienThoaiNCCServlet", value = "/")
+@WebServlet(name="DanhSachDienThoaiNCCServlet", value = "/home")
 public class DanhSachDienThoaiNCCServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     @Resource(name = "jdbc/quanlydienthoai")
@@ -28,16 +28,15 @@ public class DanhSachDienThoaiNCCServlet extends HttpServlet {
 
     @Override
     protected void doGet(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response) throws ServletException, java.io.IOException {
-        // Lấy mã nhà cung cấp từ request parameter
-        String maNCC = request.getParameter("maNCC");
-        if (maNCC == null || maNCC.isEmpty()) {
-            maNCC = "1";
+        String tenNCC = request.getParameter("tenNCC");
+        List<DienThoai> listDt;
+        if (tenNCC != null && !tenNCC.trim().isEmpty()) {
+            listDt = dienthoaiDAO.searchDienThoaiByTenNCC(tenNCC.trim());
+        } else {
+            listDt = dienthoaiDAO.getAllDienThoaiWithNCC();
         }
-        System.out.println("MaNCC: " + maNCC);
-        // Lấy danh sách điện thoại từ cơ sở dữ liệu
-        List<DienThoai> listDt = dienthoaiDAO.getAllDienThoaiByNCC(maNCC);
         request.setAttribute("dienthoaiList", listDt);
+        request.setAttribute("tenNCC", tenNCC);
         request.getRequestDispatcher("/views/DanhSachDienThoaiNCC.jsp").forward(request, response);
-
     }
 }

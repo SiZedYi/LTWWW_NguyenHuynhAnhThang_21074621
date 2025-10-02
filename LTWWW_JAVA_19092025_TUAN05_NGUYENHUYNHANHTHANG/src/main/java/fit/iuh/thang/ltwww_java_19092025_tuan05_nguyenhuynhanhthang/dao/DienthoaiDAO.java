@@ -5,6 +5,8 @@ import fit.iuh.thang.ltwww_java_19092025_tuan05_nguyenhuynhanhthang.model.DienTh
 import java.util.List;
 
 public interface DienthoaiDAO {
-    List<DienThoai> getAllDienThoaiByNCC(String maNCC);
-
+    List<DienThoai> getAllDienThoaiWithNCC();
+    List<DienThoai> searchDienThoaiByTenNCC(String tenNCC);
+    void insertDienThoai(fit.iuh.thang.ltwww_java_19092025_tuan05_nguyenhuynhanhthang.model.DienThoai dt);
+    boolean deleteDienThoai(String maDT);
 }
