@@ -41,47 +41,117 @@ public class Student {
         this.courseApplied = courseApplied;
     }
 
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-    public Date getBirthday() { return birthday; }
-    public void setBirthday(Date birthday) { this.birthday = birthday; }
+    public String getLastName() {
+        return lastName;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-    public String getMobileNumber() { return mobileNumber; }
-    public void setMobileNumber(String mobileNumber) { this.mobileNumber = mobileNumber; }
+    public Date getBirthday() {
+        return birthday;
+    }
 
-    public String getGender() { return gender; }
-    public void setGender(String gender) { this.gender = gender; }
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public String getEmail() {
+        return email;
+    }
 
-    public String getCity() { return city; }
-    public void setCity(String city) { this.city = city; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public String getPinCode() { return pinCode; }
-    public void setPinCode(String pinCode) { this.pinCode = pinCode; }
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
 
-    public String getState() { return state; }
-    public void setState(String state) { this.state = state; }
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
 
-    public String getCountry() { return country; }
-    public void setCountry(String country) { this.country = country; }
+    public String getGender() {
+        return gender;
+    }
 
-    public List<String> getHobbies() { return hobbies; }
-    public void setHobbies(List<String> hobbies) { this.hobbies = hobbies; }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-    public List<Qualification> getQualifications() { return qualifications; }
-    public void setQualifications(List<Qualification> qualifications) { this.qualifications = qualifications; }
+    public String getAddress() {
+        return address;
+    }
 
-    public String getCourseApplied() { return courseApplied; }
-    public void setCourseApplied(String courseApplied) { this.courseApplied = courseApplied; }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public List<String> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(List<String> hobbies) {
+        this.hobbies = hobbies;
+    }
+
+    public List<Qualification> getQualifications() {
+        return qualifications;
+    }
+
+    public void setQualifications(List<Qualification> qualifications) {
+        this.qualifications = qualifications;
+    }
+
+    public String getCourseApplied() {
+        return courseApplied;
+    }
+
+    public void setCourseApplied(String courseApplied) {
+        this.courseApplied = courseApplied;
+    }
 
     public static class Qualification {
         private String examination;
@@ -99,17 +169,37 @@ public class Student {
             this.yearOfPassing = yearOfPassing;
         }
 
-        public String getExamination() { return examination; }
-        public void setExamination(String examination) { this.examination = examination; }
+        public String getExamination() {
+            return examination;
+        }
 
-        public String getBoard() { return board; }
-        public void setBoard(String board) { this.board = board; }
+        public void setExamination(String examination) {
+            this.examination = examination;
+        }
 
-        public String getPercentage() { return percentage; }
-        public void setPercentage(String percentage) { this.percentage = percentage; }
+        public String getBoard() {
+            return board;
+        }
 
-        public String getYearOfPassing() { return yearOfPassing; }
-        public void setYearOfPassing(String yearOfPassing) { this.yearOfPassing = yearOfPassing; }
+        public void setBoard(String board) {
+            this.board = board;
+        }
+
+        public String getPercentage() {
+            return percentage;
+        }
+
+        public void setPercentage(String percentage) {
+            this.percentage = percentage;
+        }
+
+        public String getYearOfPassing() {
+            return yearOfPassing;
+        }
+
+        public void setYearOfPassing(String yearOfPassing) {
+            this.yearOfPassing = yearOfPassing;
+        }
     }
 }
 

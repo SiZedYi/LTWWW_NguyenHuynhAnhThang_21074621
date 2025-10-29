@@ -1,18 +1,55 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>User Registration Form</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { width: 400px; margin: 40px auto; background: #f7f7f7; padding: 30px; border-radius: 8px; }
-        h2 { text-align: center; }
-        .row { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; }
-        input[type="text"], input[type="email"], input[type="password"], select { width: 100%; padding: 8px; }
-        .gender-row { display: flex; gap: 20px; margin-top: 8px; }
-        .btn { width: 100%; background: #2056a7; color: #fff; padding: 10px; border: none; border-radius: 4px; font-size: 16px; }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            background: #f7f7f7;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .row {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: 100%;
+            padding: 8px;
+        }
+
+        .gender-row {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #2056a7;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -62,16 +99,18 @@
             <div class="col-3">
                 <select name="birthDay" required>
                     <option value="">Day</option>
-                    <% for(int i=1;i<=31;i++){ %>
-                    <option value="<%=i%>"><%=i%></option>
+                    <% for (int i = 1; i <= 31; i++) { %>
+                    <option value="<%=i%>"><%=i%>
+                    </option>
                     <% } %>
                 </select>
             </div>
             <div class="col-3">
                 <select name="birthYear" required>
                     <option value="">Year</option>
-                    <% for(int i=1980;i<=2025;i++){ %>
-                    <option value="<%=i%>"><%=i%></option>
+                    <% for (int i = 1980; i <= 2025; i++) { %>
+                    <option value="<%=i%>"><%=i%>
+                    </option>
                     <% } %>
                 </select>
             </div>

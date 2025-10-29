@@ -1,5 +1,5 @@
-<%@page import="fit.iuh.thang.bai01.Student"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="fit.iuh.thang.bai01.Student" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 <body>
 <%
     Student student = new Student();
-    student = (Student)request.getAttribute("student");
+    student = (Student) request.getAttribute("student");
     out.println(
             "First name: " + student.getFirstName()
                     + "<br/> Last name: " + student.getLastName()

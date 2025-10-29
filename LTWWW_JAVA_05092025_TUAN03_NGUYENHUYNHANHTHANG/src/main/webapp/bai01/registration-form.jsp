@@ -1,20 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Registration Form</title>
     <style>
-        body {  font-family: Arial, sans-serif; }
-        .form-container { width: 700px; margin: 20px auto; background-color: #b3e0f2; background: #b3e0f2; padding: 20px; border-radius: 8px; }
-        label { display: block; margin-top: 10px; }
-        input[type="text"], input[type="email"], textarea, select { width: 300px; padding: 5px; margin-top: 5px; }
-        .row { display: flex; align-items: center; margin-top: 10px; }
-        .row label { width: 150px; }
-        .hobbies label, .courses label { display: inline-block; margin-right: 10px; }
-        .qualification-table { border: 2px solid #0077b6; background: #e0f7fa; margin-top: 10px; width: 100%; }
-        .qualification-table th, .qualification-table td { padding: 5px 10px; border: 1px solid #0077b6; width: 100%; text-align: center; }
-        .buttons { margin-top: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            width: 700px;
+            margin: 20px auto;
+            background-color: #b3e0f2;
+            background: #b3e0f2;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"], input[type="email"], textarea, select {
+            width: 300px;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .row label {
+            width: 150px;
+        }
+
+        .hobbies label, .courses label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .qualification-table {
+            border: 2px solid #0077b6;
+            background: #e0f7fa;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .qualification-table th, .qualification-table td {
+            padding: 5px 10px;
+            border: 1px solid #0077b6;
+            width: 100%;
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -34,21 +80,24 @@
             <label>Date of birth</label>
             <select name="dobDay" required>
                 <option value="">Day</option>
-                <% for(int i=1;i<=31;i++){ %>
-                <option value="<%=i%>"><%=i%></option>
+                <% for (int i = 1; i <= 31; i++) { %>
+                <option value="<%=i%>"><%=i%>
+                </option>
                 <% } %>
             </select>
             <select name="dobMonth" required>
                 <option value="">Month</option>
-                <% String[] months = {"January","February","March","April","May","June","July","August","September","October","November","December"};
-                   for(int i=0;i<months.length;i++){ %>
-                <option value="<%=months[i]%>"><%=months[i]%></option>
+                <% String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+                    for (int i = 0; i < months.length; i++) { %>
+                <option value="<%=months[i]%>"><%=months[i]%>
+                </option>
                 <% } %>
             </select>
             <select name="dobYear" required>
                 <option value="">Year</option>
-                <% for(int i=1980;i<=2025;i++){ %>
-                <option value="<%=i%>"><%=i%></option>
+                <% for (int i = 1980; i <= 2025; i++) { %>
+                <option value="<%=i%>"><%=i%>
+                </option>
                 <% } %>
             </select>
         </div>
@@ -111,28 +160,32 @@
                     <td>1</td>
                     <td>Class X</td>
                     <td><input type="text" name="board1" maxlength="10" style="width:90%"></td>
-                    <td><input type="text" name="percentage1" maxlength="5" pattern="\d{1,3}(\.\d{1,2})?" style="width:90%"></td>
+                    <td><input type="text" name="percentage1" maxlength="5" pattern="\d{1,3}(\.\d{1,2})?"
+                               style="width:90%"></td>
                     <td><input type="text" name="year1" maxlength="4" pattern="\d{4}" style="width:90%"></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Class XII</td>
                     <td><input type="text" name="board2" maxlength="10" style="width:90%"></td>
-                    <td><input type="text" name="percentage2" maxlength="5" pattern="\d{1,3}(\.\d{1,2})?" style="width:90%"></td>
+                    <td><input type="text" name="percentage2" maxlength="5" pattern="\d{1,3}(\.\d{1,2})?"
+                               style="width:90%"></td>
                     <td><input type="text" name="year2" maxlength="4" pattern="\d{4}" style="width:90%"></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Graduation</td>
                     <td><input type="text" name="board3" maxlength="10" style="width:90%"></td>
-                    <td><input type="text" name="percentage3" maxlength="5" pattern="\d{1,3}(\.\d{1,2})?" style="width:90%"></td>
+                    <td><input type="text" name="percentage3" maxlength="5" pattern="\d{1,3}(\.\d{1,2})?"
+                               style="width:90%"></td>
                     <td><input type="text" name="year3" maxlength="4" pattern="\d{4}" style="width:90%"></td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Masters</td>
                     <td><input type="text" name="board4" maxlength="10" style="width:90%"></td>
-                    <td><input type="text" name="percentage4" maxlength="5" pattern="\d{1,3}(\.\d{1,2})?" style="width:90%"></td>
+                    <td><input type="text" name="percentage4" maxlength="5" pattern="\d{1,3}(\.\d{1,2})?"
+                               style="width:90%"></td>
                     <td><input type="text" name="year4" maxlength="4" pattern="\d{4}" style="width:90%"></td>
                 </tr>
             </table>
